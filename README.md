@@ -1,6 +1,6 @@
 # Telegram to Discord Monitor
 
-This project monitors specific Telegram group chats and forwards messages to a Discord webhook. It also provides functionality to get the chat ID of Telegram groups.
+A tool to monitor specific Telegram group chats using your own account (not a bot) and forward messages to a Discord webhook. Ideal for monitoring private groups. Provides interactive options to start monitoring or get chat IDs.
 
 ## Table of Contents
 
@@ -19,7 +19,8 @@ This project monitors specific Telegram group chats and forwards messages to a D
 
 ## Features
 
-- Monitors specified Telegram group chats and forwards messages to a Discord webhook.
+- Monitors specified Telegram group chats using your own account (not a bot) and forwards messages to a Discord webhook.
+- Ideal for monitoring private groups.
 - Provides an interactive menu to either start monitoring or get chat IDs from incoming messages.
 - Uses Telegram's MTProto API for secure communication.
 
@@ -85,7 +86,9 @@ This project monitors specific Telegram group chats and forwards messages to a D
 
 ## Getting Chat IDs
 
-To get the chat IDs of the Telegram groups you want to monitor, follow these steps:
+To get the chat IDs of the Telegram groups you want to monitor, you can use one of the following methods:
+
+### Method 1: Using the Interactive Menu
 
 1. **Run the interactive menu** and select the option to get chat IDs:
 
@@ -100,6 +103,28 @@ To get the chat IDs of the Telegram groups you want to monitor, follow these ste
    ```
 
 3. **Copy the chat ID** from the console output and add it to the `monitoredChatIds` array in the `config/index.js` file.
+
+### Method 2: Manually Extracting the Chat ID
+
+You can also manually extract the chat ID from the Telegram Web link.
+
+1. **Open the Telegram Web App**:
+
+   - Go to [web.telegram.org](https://web.telegram.org).
+
+2. **Navigate to the Group**:
+
+   - Open the group chat whose ID you want to find.
+
+3. **Copy the URL**:
+
+   - Copy the URL from the browser's address bar. It will look something like this:
+     ```
+     https://web.telegram.org/a/#-1002066575222
+     ```
+
+4. **Extract the Chat ID**:
+   - The chat ID is the number after `#-100`. In this example, the chat ID is `2066575222`.
 
 ## Monitoring Chats
 
