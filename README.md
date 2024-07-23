@@ -1,6 +1,6 @@
 # Telegram to Discord Monitor
 
-This project monitors specific Telegram group chats and forwards messages to a Discord webhook. It also provides functionality to get the chat ID of Telegram groups.
+A tool to monitor specific Telegram group chats using your own account (not a bot) and forward messages to a Discord webhook. Ideal for monitoring private groups. Provides interactive options to start monitoring or get chat IDs.
 
 ## Table of Contents
 
@@ -19,7 +19,8 @@ This project monitors specific Telegram group chats and forwards messages to a D
 
 ## Features
 
-- Monitors specified Telegram group chats and forwards messages to a Discord webhook.
+- Monitors specified Telegram group chats using your own account (not a bot) and forwards messages to a Discord webhook.
+- Ideal for monitoring private groups.
 - Provides an interactive menu to either start monitoring or get chat IDs from incoming messages.
 - Uses Telegram's MTProto API for secure communication.
 
@@ -33,51 +34,49 @@ This project monitors specific Telegram group chats and forwards messages to a D
 
 1. **Clone the repository**:
 
-   ```sh
-   git clone https://github.com/saschadotcom/telegram-to-discord-monitor.git
-   cd telegram-to-discord-monitor
-   ```
+    ```sh
+    git clone https://github.com/saschadotcom/telegram-to-discord-monitor.git
+    cd telegram-to-discord-monitor
+    ```
 
 2. **Install dependencies**:
 
-   ```sh
-   npm install
-   ```
+    ```sh
+    npm install
+    ```
 
 ## Configuration
 
 1. **Create a `.env` file**:
 
-   Create a file named `.env` in the root directory of your project with the following content:
+    Create a file named `.env` in the root directory of your project with the following content:
 
-   ```plaintext
-   API_ID=your_actual_api_id
-   API_HASH=your_actual_api_hash
-   DISCORD_WEBHOOK_URL=your_discord_webhook_url
-   ```
+    ```plaintext
+    API_ID=your_actual_api_id
+    API_HASH=your_actual_api_hash
+    DISCORD_WEBHOOK_URL=your_discord_webhook_url
+    ```
 
 2. **Update the `config/index.js` file**:
 
-   The `config/index.js` file is already set up to read from the `.env` file and validate the configuration values. If any of the required values are missing or invalid, a clear and colored error message will be displayed, and the process will exit.
+    The `config/index.js` file is already set up to read from the `.env` file and validate the configuration values. If any of the required values are missing or invalid, a clear and colored error message will be displayed, and the process will exit.
 
 ## Running the Project
 
 1. **Start the interactive menu**:
 
-   ```sh
-   npm start
-   ```
+    ```sh
+    npm start
+    ```
 
-   The menu will provide options to either start monitoring the chats or get chat IDs from incoming messages.
+    The menu will provide options to either start monitoring the chats or get chat IDs from incoming messages.
 
 ## Getting Telegram API ID and Hash
 
 1. **Log in to [my.telegram.org](https://my.telegram.org)**:
-
    - Use your Telegram account credentials to log in.
 
 2. **Create a new application**:
-
    - Fill in the required fields to create a new application. This will provide you with an API ID and an API Hash.
 
 3. **Copy your API ID and API Hash**:
@@ -89,15 +88,15 @@ To get the chat IDs of the Telegram groups you want to monitor, follow these ste
 
 1. **Run the interactive menu** and select the option to get chat IDs:
 
-   ```sh
-   npm start
-   ```
+    ```sh
+    npm start
+    ```
 
 2. **Send a message in the Telegram group** you want to monitor. The chat ID and a preview of the message will be logged in the console in the following format:
 
-   ```
-   [INFO] - Chat ID: '1234567890', Message Preview: 'Hello, this is a test message...'
-   ```
+    ```
+    [INFO] - Chat ID: '1234567890', Message Preview: 'Hello, this is a test message...'
+    ```
 
 3. **Copy the chat ID** from the console output and add it to the `monitoredChatIds` array in the `config/index.js` file.
 
@@ -105,9 +104,9 @@ To get the chat IDs of the Telegram groups you want to monitor, follow these ste
 
 1. **Run the interactive menu** and select the option to start monitoring chats:
 
-   ```sh
-   npm start
-   ```
+    ```sh
+    npm start
+    ```
 
 2. The script will now monitor the specified chats and forward messages to the configured Discord webhook. If no chat IDs are specified, the script will monitor all incoming messages.
 
@@ -122,6 +121,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 ### Notes:
-
 - Replace `your_actual_api_id`, `your_actual_api_hash`, and `your_discord_webhook_url` with your actual values.
 - Ensure you keep your `API_ID` and `API_HASH` secure and do not share them publicly.
