@@ -127,7 +127,7 @@ You can also manually extract the chat ID from the Telegram Web link.
 
    - The chat ID is the number after `#-100`. In this example, the chat ID is `2066575222`.
 
-5. **Store**
+5. **Save it**:
    - Copy the chat ID and add it to the `monitoredChatIds` array in the `config/index.js` file.
 
 ## Monitoring Chats
